@@ -15,10 +15,10 @@ class Bank:
         self.commission = commission
         self.deposit_rate = deposit_rate
 
-    def get_accounts(self):
+    def get_accounts(self) -> dict:
         return self.__accounts
 
-    def get_clients(self):
+    def get_clients(self) -> dict:
         return self.__clients
 
 class Address:
@@ -59,20 +59,20 @@ class Client:
     def set_password(self, password: str):
         self.__password = password
 
-    def get_password(self):
+    def get_password(self) -> str:
         return self.__password
   
-    def is_address_set(self):
+    def is_address_set(self) -> bool:
         return self.__address != None
     
-    def is_passport_set(self):
+    def is_passport_set(self) -> bool:
         return self.__passport != None
 
     def update_status(self):
         if (self.is_address_set() and self.is_passport_set()):
             self.is_identified = True
 
-    def get_accounts(self):
+    def get_accounts(self) -> dict:
         return self.__accounts
 
 class Account(metaclass=ABCMeta):
